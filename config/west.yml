@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/petejohanson
     - name: mctechnology17
       url-base: https://github.com/mctechnology17
+    - name: Ziembski
+      url-base: https://github.com/Ziembski
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -14,5 +16,8 @@ manifest:
     - name: zmk-nice-oled
       remote: mctechnology17
       revision: main
+    # - name: nice-view-press-start
+    #   remote: Ziembski
+    #   revision: main
   self:
     path: config
