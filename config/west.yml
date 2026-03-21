@@ -11,11 +11,11 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3.0
-      import: app/west.yml
-    - name: zmk-nice-oled
-      remote: mctechnology17
       revision: main
+      import: app/west.yml
+    # - name: zmk-nice-oled
+    #   remote: mctechnology17
+    #   revision: main
     # - name: nice-view-press-start
     #   remote: Ziembski
     #   revision: main
