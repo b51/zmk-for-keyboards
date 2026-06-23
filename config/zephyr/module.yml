@@ -1,0 +1,6 @@
+# ZMK user config module
+# This file is required for the config/ directory to be treated as a Zephyr module.
+# See: https://docs.zephyrproject.org/latest/develop/modules.html
+
+build:
+  cmake: .
