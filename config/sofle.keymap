@@ -66,7 +66,6 @@
 
         default_layer {
             display-name = "Base";   // 👈 this is the layer name you see in UI/OLED
-
             // ------------------------------------------------------------------------------------------------------------
             // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   | BKSPC |
             // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   \   |
@@ -87,6 +86,7 @@
 
         raise_layer {
             display-name = "Dota";
+
             // ------------------------------------------------------------------------------------------------------------
             // |       |        |        |       |       |      |                |        |       |       |      |       |       |
             // |       |        |        |       |       |      |                |        |       |       |      |       |       |
@@ -120,15 +120,27 @@
                 <&inc_dec_kp PG_UP PG_DN>;
         };
 
+        mid_layer {
+            display-name = "Move";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans    &trans    &trans  &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans    &trans    &trans  &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans    &trans  &trans     &trans  &trans
+                &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans    &mo 4   &to 0
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
+        };
+
         lower_layer {
             display-name = "Func";
-
             bindings = <
 &trans           &kp F1    &kp F2    &kp F3           &kp F4           &kp F5                                     &kp F6           &kp F7           &kp F8           &kp F9        &kp F10       &kp DEL
 &rgb_ug RGB_TOG  &trans    &kp UP    &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_HUD                            &rgb_ug RGB_HUI  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &kp C_BRI_DN  &kp C_BRI_UP  &kp F11
 &trans           &kp LEFT  &kp DOWN  &kp RIGHT        &rgb_ug RGB_EFR  &rgb_ug RGB_EFF                            &trans           &trans           &trans           &trans        &kp PG_UP     &kp F12
 &trans           &trans    &trans    &bt BT_CLR       &bt BT_PRV       &bt BT_NXT       &out OUT_TOG    &trans    &trans           &trans           &trans           &trans        &kp PG_DN     &trans
-                           &trans    &trans           &trans           &trans           &trans          &mkp MB1  &trans           &trans           &trans           &trans
+                           &trans    &trans           &trans           &trans           &trans          &mkp MB1  &trans           &trans           &trans           &tog 4
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
