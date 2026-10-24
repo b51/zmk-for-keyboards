@@ -154,3 +154,10 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
 		zmk,underglow = &led_strip;
 	};
 };
+
+/* D10 (P0.09) and D16 (P0.10) are the nRF52840 NFC1/NFC2 pins, used here as matrix
+ * columns. The firmware clears the one-time UICR.NFCPINS latch on first boot so they
+ * behave as GPIO; a module whose UICR was never cleared has both columns dead. */
+&uicr {
+	nfct-pins-as-gpios;
+};
