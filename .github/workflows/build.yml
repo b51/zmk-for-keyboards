@@ -8,4 +8,6 @@ on:
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3.0
+    # @main: only the v0.4-era workflow sanitises the "/" in board ids
+    # (nice_nano//zmk) for artifact file names; the @v0.3.0 one does not.
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
