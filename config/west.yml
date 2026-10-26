@@ -6,11 +6,20 @@ manifest:
       url-base: https://github.com/petejohanson
     - name: mctechnology17
       url-base: https://github.com/mctechnology17
+    - name: cormoran
+      url-base: https://github.com/cormoran
   projects:
+    # zmk-module-ble-management needs custom Studio RPC (app/include/zmk/studio/custom.h),
+    # which does not exist upstream -> cormoran's v0.3 branch fork.
     - name: zmk
-      remote: zmkfirmware
-      revision: v0.3.0
+      remote: cormoran
+      revision: v0.3-branch+custom-studio-protocol+ble
       import: app/west.yml
+    # last release built against ZMK v0.3; main is v0.4-only (renamed endpoint APIs)
+    - name: zmk-module-ble-management
+      remote: cormoran
+      revision: zmk-v0.3.0.0
+      clone-depth: 1
     - name: zmk-nice-oled
       remote: mctechnology17
       revision: main
