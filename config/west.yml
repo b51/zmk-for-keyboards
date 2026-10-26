@@ -9,22 +9,20 @@ manifest:
     - name: cormoran
       url-base: https://github.com/cormoran
   projects:
-    # zmk-module-ble-management needs custom Studio RPC (app/include/zmk/studio/custom.h),
-    # which does not exist upstream -> cormoran's v0.3 branch fork.
+    # All cormoran modules below need custom Studio RPC (app/include/zmk/studio/custom.h),
+    # which does not exist upstream -> cormoran's fork, ZMK main / v0.4 line.
     - name: zmk
       remote: cormoran
-      revision: v0.3-branch+custom-studio-protocol+ble
+      revision: main+custom-studio-protocol
       import: app/west.yml
-    # last release built against ZMK v0.3; main is v0.4-only (renamed endpoint APIs)
     - name: zmk-module-ble-management
       remote: cormoran
-      revision: zmk-v0.3.0.0
+      revision: main
       clone-depth: 1
-    # needs Zephyr >= 3.6 (ROM_SECTIONS linker location); this ZMK line is Zephyr 3.5
-    # - name: zmk-feature-device-info
-    #   remote: cormoran
-    #   revision: main
-    #   clone-depth: 1
+    - name: zmk-feature-device-info
+      remote: cormoran
+      revision: main
+      clone-depth: 1
     - name: zmk-feature-watchdog
       remote: cormoran
       revision: main
