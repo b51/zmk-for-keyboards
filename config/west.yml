@@ -32,7 +32,7 @@ manifest:
     # screen (commit c3a336d, branch peripheral-hid-indicators).
     - name: zmk-nice-oled
       remote: b51
-      revision: 2dc8dc1fc7d63e970e9e023730ca3368c4181b8d
+      revision: 82330324f7ad447b150367135bbf262d91b35b3b
     # - name: nice-view-press-start
     #   remote: Ziembski
     #   revision: main
